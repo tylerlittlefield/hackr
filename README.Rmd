@@ -15,6 +15,9 @@ knitr::opts_chunk$set(
 # hackr
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.org/tyluRp/hackr.svg?branch=master)](https://travis-ci.org/tyluRp/hackr)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/tyluRp/hackr?branch=master&svg=true)](https://ci.appveyor.com/project/tyluRp/hackr)
+[![Codecov test coverage](https://codecov.io/gh/tyluRp/hackr/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/hackr?branch=master)
 <!-- badges: end -->
 
 The goal of hackr is to wrap the Hacker News API in R.

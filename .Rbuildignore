@@ -1,3 +1,6 @@
 ^hackr\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
+^\.travis\.yml$
+^appveyor\.yml$
+^codecov\.yml$
