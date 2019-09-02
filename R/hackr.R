@@ -5,6 +5,7 @@
 #' forward slash must be included, i.e. /item/8863.json
 #'
 #' @param x Endpoint
+#' @param ... Any arguments you can pass to \code{jsonlite::fromJSON}
 #'
 #' @export
 hackr_raw <- function(x, ...) {

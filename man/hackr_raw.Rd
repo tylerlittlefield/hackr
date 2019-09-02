@@ -8,6 +8,8 @@ hackr_raw(x, ...)
 }
 \arguments{
 \item{x}{Endpoint}
+
+\item{...}{Any arguments you can pass to \code{jsonlite::fromJSON}}
 }
 \description{
 Provide the raw endpoint, do not include the prefix

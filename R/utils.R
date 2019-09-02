@@ -1,3 +1,5 @@
+utils::globalVariables(c(".", "time", "kids"))
+
 hackr_unnest <- function(x) {
   has_kids <- any(grepl("kids", names(x)) == TRUE)
 
@@ -12,7 +14,7 @@ hackr_parse <- function(x, n) {
     .[1:n] %>%
     paste0("/item/", ., ".json") %>%
     purrr::map(hackr_raw) %>%
-    purrr::map(tibble::as_tibble) %>%
+    purrr::map(dplyr::as_tibble) %>%
     dplyr::bind_rows()
 }
 
