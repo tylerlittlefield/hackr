@@ -23,10 +23,11 @@ hackr_raw <- function(x, ...) {
 #'
 #' @param n The number of top stories to return, defaults to 10.
 #' @param unnest Should "kids" column be nested? Defaults to TRUE.
+#' @param quiet Should function hide message? Defaults to FALSE.
 #'
 #' @export
-hackr_top_stories <- function(n = 10, unnest = FALSE) {
-  cat("Fetching top", n, "stories...\n")
+hackr_top_stories <- function(n = 10, unnest = FALSE, quiet = FALSE) {
+  if (!quiet) cat("Fetching top", n, "stories...\n")
 
   hackr_raw("/topstories.json") %>%
     hackr_parse(n) %>%
@@ -41,10 +42,11 @@ hackr_top_stories <- function(n = 10, unnest = FALSE) {
 #'
 #' @param n The number of top stories to return, defaults to 10.
 #' @param unnest Should "kids" column be nested? Defaults to TRUE.
+#' @param quiet Should function hide message? Defaults to FALSE.
 #'
 #' @export
-hackr_new_stories <- function(n = 10, unnest = FALSE) {
-  cat("Fetching", n, "new stories...\n")
+hackr_new_stories <- function(n = 10, unnest = FALSE, quiet = FALSE) {
+  if (!quiet) cat("Fetching", n, "new stories...\n")
 
   hackr_raw("/newstories.json") %>%
     hackr_parse(n) %>%
@@ -59,10 +61,11 @@ hackr_new_stories <- function(n = 10, unnest = FALSE) {
 #'
 #' @param n The number of top stories to return, defaults to 10.
 #' @param unnest Should "kids" column be nested? Defaults to TRUE.
+#' @param quiet Should function hide message? Defaults to FALSE.
 #'
 #' @export
-hackr_best_stories <- function(n = 10, unnest = FALSE) {
-  cat("Fetching", n, "best stories...\n")
+hackr_best_stories <- function(n = 10, unnest = FALSE, quiet = FALSE) {
+  if (!quiet) cat("Fetching", n, "best stories...\n")
 
   hackr_raw("/beststories.json") %>%
     hackr_parse(n) %>%

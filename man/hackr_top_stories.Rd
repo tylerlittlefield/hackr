@@ -4,12 +4,14 @@
 \alias{hackr_top_stories}
 \title{Get Top Stories}
 \usage{
-hackr_top_stories(n = 10, unnest = FALSE)
+hackr_top_stories(n = 10, unnest = FALSE, quiet = FALSE)
 }
 \arguments{
 \item{n}{The number of top stories to return, defaults to 10.}
 
 \item{unnest}{Should "kids" column be nested? Defaults to TRUE.}
+
+\item{quiet}{Should function hide message? Defaults to FALSE.}
 }
 \description{
 Fetches the top 10 stories. You can fetch more by adjusting the n parameter.
