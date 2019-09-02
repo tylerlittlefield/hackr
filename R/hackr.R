@@ -23,16 +23,19 @@ hackr_raw <- function(x, ...) {
 #'
 #' @param n The number of top stories to return, defaults to 10.
 #' @param unnest Should "kids" column be nested? Defaults to TRUE.
+#' @param comments Should comments be joined? Defaults to FALSE.
 #' @param quiet Should function hide message? Defaults to FALSE.
 #'
 #' @export
-hackr_top_stories <- function(n = 10, unnest = FALSE, quiet = FALSE) {
+hackr_top_stories <- function(n = 10, unnest = FALSE, comments = FALSE,
+                              quiet = FALSE) {
   if (!quiet) cat("Fetching top", n, "stories...\n")
 
   hackr_raw("/topstories.json") %>%
     hackr_parse(n) %>%
     hackr_parse_time() %>%
-    hackr_unnest()
+    hackr_unnest(unnest) %>%
+    hackr_join_comments(comments)
 }
 
 #' Get New Stories
@@ -42,16 +45,19 @@ hackr_top_stories <- function(n = 10, unnest = FALSE, quiet = FALSE) {
 #'
 #' @param n The number of top stories to return, defaults to 10.
 #' @param unnest Should "kids" column be nested? Defaults to TRUE.
+#' @param comments Should comments be joined? Defaults to FALSE.
 #' @param quiet Should function hide message? Defaults to FALSE.
 #'
 #' @export
-hackr_new_stories <- function(n = 10, unnest = FALSE, quiet = FALSE) {
+hackr_new_stories <- function(n = 10, unnest = FALSE, comments = FALSE,
+                              quiet = FALSE) {
   if (!quiet) cat("Fetching", n, "new stories...\n")
 
   hackr_raw("/newstories.json") %>%
     hackr_parse(n) %>%
     hackr_parse_time() %>%
-    hackr_unnest()
+    hackr_unnest(unnest) %>%
+    hackr_join_comments(comments)
 }
 
 #' Get Best Stories
@@ -61,14 +67,17 @@ hackr_new_stories <- function(n = 10, unnest = FALSE, quiet = FALSE) {
 #'
 #' @param n The number of top stories to return, defaults to 10.
 #' @param unnest Should "kids" column be nested? Defaults to TRUE.
+#' @param comments Should comments be joined? Defaults to FALSE.
 #' @param quiet Should function hide message? Defaults to FALSE.
 #'
 #' @export
-hackr_best_stories <- function(n = 10, unnest = FALSE, quiet = FALSE) {
+hackr_best_stories <- function(n = 10, unnest = FALSE, comments = FALSE,
+                               quiet = FALSE) {
   if (!quiet) cat("Fetching", n, "best stories...\n")
 
   hackr_raw("/beststories.json") %>%
     hackr_parse(n) %>%
     hackr_parse_time() %>%
-    hackr_unnest()
+    hackr_unnest(unnest) %>%
+    hackr_join_comments(comments)
 }

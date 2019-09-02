@@ -33,12 +33,15 @@ devtools::install_github("tylurp/hackr")
 
 ## Example
 
-You can fetch top stories, new stories, or best stories. By default, a `tibble` is returned, if there is a _kids_ column (comments identifier), it will be nested in order to return a single row for each story. You can override this with `unnest = FALSE`:
+You can fetch top stories, new stories, or best stories. By default, a `tibble` is returned, if there is a _kids_ column (comments identifier), it will be nested in order to return a single row for each story. You can override this with `unnest = TRUE` and show comments with `comments = TRUE`:
 
-```{r example}
+```{r example, message=FALSE}
 library(hackr)
+library(dplyr)
 
 hackr_top_stories()
+hackr_top_stories(n = 1, unnest = TRUE, comments = TRUE) %>% 
+  select(title, comment)
 hackr_new_stories(2)
 hackr_best_stories(2)
 ```

@@ -4,12 +4,15 @@
 \alias{hackr_new_stories}
 \title{Get New Stories}
 \usage{
-hackr_new_stories(n = 10, unnest = FALSE, quiet = FALSE)
+hackr_new_stories(n = 10, unnest = FALSE, comments = FALSE,
+  quiet = FALSE)
 }
 \arguments{
 \item{n}{The number of top stories to return, defaults to 10.}
 
 \item{unnest}{Should "kids" column be nested? Defaults to TRUE.}
+
+\item{comments}{Should comments be joined? Defaults to FALSE.}
 
 \item{quiet}{Should function hide message? Defaults to FALSE.}
 }
