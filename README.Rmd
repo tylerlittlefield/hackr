@@ -1,0 +1,43 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# hackr
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of hackr is to wrap the Hacker News API in R.
+
+## Installation
+
+You can install the development version from GitHub with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("tylurp/hackr")
+```
+
+## Example
+
+You can fetch top stories, new stories, or best stories. By default, a `tibble` is returned, if there is a _kids_ column (comments identifier), it will be nested in order to return a single row for each story. You can override this with `unnest = FALSE`:
+
+```{r example}
+library(hackr)
+
+hackr_top_stories()
+hackr_new_stories(2)
+hackr_best_stories(2)
+```
+
+That's it for now. Will add more features soon.
